@@ -33,6 +33,20 @@ namespace Railway{
 			Assert::IsTrue(s == n.toString());
 			//Assert::IsTrue(len == 0.0);
 		}
+      TEST_METHOD(Attach) {
+         Node n[Node::MAX_ATTACHED_POINTS+1];
+         
+         for (int i = 0; i < Node::MAX_ATTACHED_POINTS+1; ++i) {
+            string name = "test " + std::to_string(i);
+            n[i].assign(name);
+         }
+
+         for (int i = 0; i < Node::MAX_ATTACHED_POINTS; ++i) {
+            n[0].attach(&(n[i+1]), i);
+         }
+
+      }
+
 	};
 }
 

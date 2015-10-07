@@ -20,4 +20,8 @@ namespace Railway {
 		return name_;
 	}
 
+   void Node::attach( Node* attachedNode, const int idOfAttachedPoint) {
+      attachedNodes[idOfAttachedPoint] = attachedNode;
+   }
+
 }

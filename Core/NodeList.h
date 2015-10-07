@@ -1,20 +1,26 @@
 #pragma once
+
+/// Assume track attached left to right, then up to down:
+/// 1-2  track
+/// 1-2 1-3 junction
+/// 1-2 3-2 junction
+/// 1-2 3-4 cross
+
 namespace Railway 
 {
-   //class Node;
    class Node {
 	public:
+      static const int MAX_ATTACHED_POINTS = 4;
 		void assign(const std::string& name, const float len = 0.0);
 		std::string toString()const;
+
+      void attach(Node* attachedNode, const int idOfAttachedPoint); 
 
 	private:
 		std::string name_;
 		float	len_;
-      //Node *attachedNodes1;
-      //Node *attachedNodes2;
-      //Node *attachedNodes3;
 
-      Node* attachedNodes[4];
+      Node* attachedNodes[MAX_ATTACHED_POINTS];
       ///std::array<Node*, 3> nodesArray;
    };
 
