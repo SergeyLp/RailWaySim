@@ -11,7 +11,7 @@ namespace Railway
    class Node {
 	public:
       static const int MAX_ATTACHED_POINTS = 4;
-		void assign(const std::string& name, const float len = 0.0);
+		void assign(const std::string& name, const float len);
 		std::string toString()const;
 
       void attach(Node* attachedNode, const int idOfAttachedPoint); 
@@ -27,6 +27,7 @@ namespace Railway
 	class NodeList{
 	public:
 		void load();
+      std::string toString(const bool verbosed = false)const;
 	private:
 		std::vector<Node> list;
 	};

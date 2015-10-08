@@ -7,6 +7,8 @@
 #include <functional>
 #include <map>
 #include <memory> 
+#include <string>
+
 
 // Заголовки CppUnitTest
 #include "CppUnitTest.h"

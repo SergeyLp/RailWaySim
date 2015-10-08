@@ -29,7 +29,7 @@ namespace Railway{
 		TEST_METHOD(Assign) {
 			Node n;
 			const string s = "test";
-			n.assign(s);
+			n.assign(s, 0.0);
 			Assert::IsTrue(s == n.toString());
 			//Assert::IsTrue(len == 0.0);
 		}
@@ -38,7 +38,7 @@ namespace Railway{
          
          for (int i = 0; i < Node::MAX_ATTACHED_POINTS+1; ++i) {
             string name = "test " + std::to_string(i);
-            n[i].assign(name);
+            n[i].assign(name, 0.0);
          }
 
          for (int i = 0; i < Node::MAX_ATTACHED_POINTS; ++i) {

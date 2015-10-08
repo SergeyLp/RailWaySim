@@ -7,9 +7,25 @@ namespace Railway {
 
 	void NodeList::load() {
 		Node n;
-		//n.assign(L"Санк Петербург", 100.0);
-		//list.push_back(n);
-	};
+		n.assign("Санк Петербург", 0.0);
+		list.push_back(n);
+      n.assign("Ланская", 0.0);
+      list.push_back(n);
+   }
+   std::string NodeList::toString(const bool verbosed) const {
+      string buff;
+      buff.reserve(0xFFF);
+      for (auto n : list) {
+         if (verbosed) {
+            buff += std::to_string((uint64_t)&n);
+            buff += ": ";
+         }
+         buff += n.toString();
+         buff += verbosed ? " " : "-";
+      }
+      buff.resize(buff.length() - 1);  // Remote last delimiter
+      return buff;
+   }
 
 	void Node::assign(const string& name, const float len){
 		name_ = name;
