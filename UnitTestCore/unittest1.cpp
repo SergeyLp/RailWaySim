@@ -37,7 +37,7 @@ namespace Railway{
          Node n[Node::MAX_ATTACHED_POINTS+1];
          
          for (int i = 0; i < Node::MAX_ATTACHED_POINTS+1; ++i) {
-            string name = "test " + std::to_string(i);
+            const string name = "test " + std::to_string(i);
             n[i].assign(name, 0.0);
          }
 

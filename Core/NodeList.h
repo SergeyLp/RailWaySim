@@ -34,11 +34,15 @@ namespace Railway
 
 	class Track: public Node {
 	public:
-	};
+   private:
+      static int numName;
+   };
 
 	class Junction: public Node{
 	public:
-	};
+   private:
+      static int numName;
+   };
 
 
 }//namespace

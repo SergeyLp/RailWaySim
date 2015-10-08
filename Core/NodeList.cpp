@@ -12,16 +12,15 @@ namespace Railway {
       n.assign("Ланская", 0.0);
       list.push_back(n);
    }
+
    std::string NodeList::toString(const bool verbosed) const {
       string buff;
       buff.reserve(0xFFF);
-      for (auto n : list) {
+      for (const auto n : list) {
          if (verbosed) {
-            buff += std::to_string((uint64_t)&n);
-            buff += ": ";
+            buff += std::to_string((uint64_t)&n) + ": "; // TODO: may be std::move ?
          }
-         buff += n.toString();
-         buff += verbosed ? " " : "-";
+         buff += n.toString() + ((verbosed) ? " " : "-");   // TODO ?
       }
       buff.resize(buff.length() - 1);  // Remote last delimiter
       return buff;
