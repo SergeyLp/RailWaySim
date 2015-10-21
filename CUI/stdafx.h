@@ -1,17 +1,20 @@
 #pragma once
 #include "targetver.h"
+#include "..\Core\stdafx.h"
 
 //#include <stdio.h>
 //#include <tchar.h>
 #define WIN32_LEAN_AND_MEAN             // Исключите редко используемые компоненты из заголовков Windows
-#include <Windows.h>
-
+//#include <Windows.h>
+/*
 #include <vector>
 #include <wchar.h>
 #include <algorithm>
 #include <functional>
 #include <map>
 #include <memory> 
-
+*/
+//#include <string>
 #include <iostream>
-#include <string>
+#include <iomanip>
+#include <chrono>

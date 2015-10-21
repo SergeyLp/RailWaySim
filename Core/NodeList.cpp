@@ -1,10 +1,24 @@
 #include "stdafx.h"
+#include "global.h"
 #include "NodeList.h"
 
 using std::string;
 
-namespace Railway {
+inline std::ostream& operator << (std::ostream& strm, const Railway::StopPoint& sp) {
+   strm << sp.toString();
+   return strm;
+}
 
+inline std::istream& operator >> (std::istream& strm, Railway::StopPoint& sp) {
+   std::string shortName;
+   strm >> sp.name;
+   strm >> shortName;
+   strm >> sp.distance;
+   return strm;
+}
+
+namespace Railway {
+   #if  0
 	void NodeList::load() {
 		Node n;
 		n.assign("Санк Петербург", 0.0);
@@ -38,5 +52,35 @@ namespace Railway {
    void Node::attach( Node* attachedNode, const int idOfAttachedPoint) {
       attachedNodes[idOfAttachedPoint] = attachedNode;
    }
+   #endif
+
+   void Branch::load(const std::string & fileName) {
+      std::ifstream file(fileName);
+      if (!file) return;
+      while (!file.eof()) {
+         StopPoint sp;
+         file >> sp;
+         points.push_back(sp);
+      }
+   }
+
+   string Branch::toString() const {
+      string ss;
+      for (const auto& sp : points) {
+         ss += sp.toString() + "\n";
+      }
+      return ss;
+   }
+
+   std::vector<StopPoint> Branch::stopPoints() const {
+      return points;
+   }
+   
+   std::string StopPoint::toString() const {
+      string ss(name);
+      ss += "\t" + std::to_string(distance);
+      return ss;
+   }
 
 }
+

@@ -3,16 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Core", "Core\Core.vcxproj", "{98B6D35A-C436-4C4E-8B04-1790E62E2C09}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Core`15", "Core\Core.vcxproj", "{98B6D35A-C436-4C4E-8B04-1790E62E2C09}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTestCore", "UnitTestCore\UnitTestCore.vcxproj", "{85EE8917-CC2A-4519-BBBB-2D8837F712C5}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTest`15", "UnitTestCore\UnitTestCore.vcxproj", "{85EE8917-CC2A-4519-BBBB-2D8837F712C5}"
 	ProjectSection(ProjectDependencies) = postProject
 		{98B6D35A-C436-4C4E-8B04-1790E62E2C09} = {98B6D35A-C436-4C4E-8B04-1790E62E2C09}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CUI", "CUI\CUI.vcxproj", "{B080F00A-B456-4628-8533-2434F835345F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CUI`15", "CUI\CUI.vcxproj", "{B080F00A-B456-4628-8533-2434F835345F}"
 	ProjectSection(ProjectDependencies) = postProject
 		{98B6D35A-C436-4C4E-8B04-1790E62E2C09} = {98B6D35A-C436-4C4E-8B04-1790E62E2C09}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5C1F3A08-4B6A-4AE7-801D-DC287BF67972}"
+	ProjectSection(SolutionItems) = preProject
+		Stations.txt = Stations.txt
 	EndProjectSection
 EndProject
 Global
