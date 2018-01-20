@@ -66,8 +66,9 @@ namespace Railway {
    }
    #endif
 
-   void Branch::load(const std::string & fileName) {
-      std::ifstream file(fileName);
+   //void Branch::load(const std::string & fileName) {
+   void Branch::load(const std::experimental::filesystem::path& filePath){
+      std::ifstream file(filePath);
       if (!file) return;
       StopPoint sp;
       while (file >> sp) {

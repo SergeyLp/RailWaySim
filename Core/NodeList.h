@@ -79,8 +79,8 @@ namespace Railway
    class Branch {
     public:
          Branch() {};
-         Branch(const std::string& fileName) { load(fileName); }
-         void load(const std::string& fileName);
+         Branch(const std::experimental::filesystem::path& filePath) { load(filePath); }
+         void load(const std::experimental::filesystem::path& filePath);
          std::string toString() const;
          std::vector<StopPoint> stopPoints() const;
    private:

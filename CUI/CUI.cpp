@@ -9,7 +9,7 @@ using namespace lip;
 #include"../Core/GameTime.h"
 #include"../Core/Game.h"
 //#include"../Core/RS_Part.h"
-
+//-#include <string_view>
 
 using namespace Railway;
 using std::cout;
@@ -89,6 +89,19 @@ int main() {
    //cout << "\n" << l1.toString();
    
    cout << module_proxy() << " **** \n";
+   //assert(true, "Bad");
+
+
+
+   std::string programName;
+
+   // ...
+
+   if (!programName.empty()) {
+       //char emptyString[] = { '\0' };
+       cout << programName.data();
+   }
+
     cout << "\n\t\t PRESS ENTER...\n>"; getchar();
     return 0;
 }
