@@ -64,6 +64,7 @@ int main() {
    Train passenger(77);
    Train hiSpeed(140.6);
    #endif
+   double module_proxy();
 
    for (const auto& sp : game.stop_points()) {
       tFr.fromHour(sp.distance / 52 + 2 + 43 / 60.0);
@@ -87,6 +88,7 @@ int main() {
    #endif
    //cout << "\n" << l1.toString();
    
+   cout << module_proxy() << " **** \n";
     cout << "\n\t\t PRESS ENTER...\n>"; getchar();
     return 0;
 }

@@ -29,5 +29,13 @@
     <ClCompile Include="CUI.cpp">
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
+    <ClCompile Include="Main.ixx">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Consume.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </None>
   </ItemGroup>
 </Project>
