@@ -2,18 +2,18 @@
 namespace Railway
 {
 
-   class GameTime {
-   public:
-      GameTime() {};
-      GameTime(const uint ms) { fromMsec(ms); };
-      std::string toString(const int formatId = 0)const;
-      void fromHour(const double h);
-      void fromMsec(const uint ms);
+class GameTime {
+public:
+    GameTime() :t(0) {};
+    GameTime(uint ms) { fromMsec(ms); };
+    std::string toString(int formatId = 0)const;
+    void fromHour(double h);
+    void fromMsec(uint ms);
 
-      static int fromHourToMsec(const double h);
+    static int fromHourToMsec(double h);
 
-   private:
-      uint t;   //msec
-   };
+private:
+    uint t;   //msec
+};
 
 }

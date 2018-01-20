@@ -1,8 +1,20 @@
+/*
+* This is an independent project of an individual developer. Dear PVS-Studio, please check it.
+* PVS-Studio Static Code Analyzer for C, C++ and C#: http://www.viva64.com
+*/
 #include "stdafx.h"
-#include "global.h"
+#include "../../../lib/!lip_def.h"
+using namespace lip;
 #include "NodeList.h"
 
 using std::string;
+
+/// Assume track attached left to right, then up to down:
+/// 1-2  track
+/// 1-2 1-3 junction
+/// 1-2 3-2 junction
+/// 1-2 3-4 cross
+
 
 inline std::ostream& operator << (std::ostream& strm, const Railway::StopPoint& sp) {
    strm << sp.toString();
@@ -19,10 +31,10 @@ inline std::istream& operator >> (std::istream& strm, Railway::StopPoint& sp) {
 
 namespace Railway {
    #if  0
-	void NodeList::load() {
-		Node n;
-		n.assign("Санк Петербург", 0.0);
-		list.push_back(n);
+    void NodeList::load() {
+        Node n;
+        n.assign("Санк Петербург", 0.0);
+        list.push_back(n);
       n.assign("Ланская", 0.0);
       list.push_back(n);
    }
@@ -40,14 +52,14 @@ namespace Railway {
       return buff;
    }
 
-	void Node::assign(const string& name, const float len){
-		name_ = name;
-		len_ = len;
-	}
+    void Node::assign(const string& name, const float len){
+        name_ = name;
+        len_ = len;
+    }
 
-	string Node::toString() const {
-		return name_;
-	}
+    string Node::toString() const {
+        return name_;
+    }
 
    void Node::attach( Node* attachedNode, const int idOfAttachedPoint) {
       attachedNodes[idOfAttachedPoint] = attachedNode;
@@ -57,29 +69,28 @@ namespace Railway {
    void Branch::load(const std::string & fileName) {
       std::ifstream file(fileName);
       if (!file) return;
-      while (!file.eof()) {
-         StopPoint sp;
-         file >> sp;
-         points.push_back(sp);
+      StopPoint sp;
+      while (file >> sp) {
+         _stop_points.push_back(sp);
       }
    }
 
    string Branch::toString() const {
-      string ss;
-      for (const auto& sp : points) {
-         ss += sp.toString() + "\n";
+      string s;
+      for (const auto& sp : _stop_points) {
+         s += sp.toString() + "\n";
       }
-      return ss;
+      return s;
    }
 
    std::vector<StopPoint> Branch::stopPoints() const {
-      return points;
+      return _stop_points;
    }
    
    std::string StopPoint::toString() const {
-      string ss(name);
-      ss += "\t" + std::to_string(distance);
-      return ss;
+      string s(name);
+      s += "\t" + std::to_string(distance);
+      return s;
    }
 
 }

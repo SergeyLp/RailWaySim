@@ -1,7 +1,11 @@
+/*
+* This is an independent project of an individual developer. Dear PVS-Studio, please check it.
+* PVS-Studio Static Code Analyzer for C, C++ and C#: http://www.viva64.com
+*/
 #include "stdafx.h"
 #include "CppUnitTest.h"
-
-#include"../Core/global.h"
+#include "../../../lib/!lip_def.h"
+using namespace lip;
 #include"../Core/NodeList.h"
 #include"../Core/GameTime.h"
 
@@ -123,23 +127,23 @@ public:
    }
    };
    #if 0
-	TEST_CLASS(TestNode) {
-	public:
-		TEST_METHOD(Constructor) {
-			const Node n;
-			Assert::IsNotNull(&n);
-		}
-		TEST_METHOD(EmptyBeforeCreate) {
-			const Node n;
-			Assert::IsTrue(n.toString().size() == 0);
-		}
-		TEST_METHOD(Assign) {
-			Node n;
-			const string s = "test";
-			n.assign(s, 0.0);
-			Assert::IsTrue(s == n.toString());
-			//Assert::IsTrue(len == 0.0);
-		}
+    TEST_CLASS(TestNode) {
+    public:
+        TEST_METHOD(Constructor) {
+            const Node n;
+            Assert::IsNotNull(&n);
+        }
+        TEST_METHOD(EmptyBeforeCreate) {
+            const Node n;
+            Assert::IsTrue(n.toString().size() == 0);
+        }
+        TEST_METHOD(Assign) {
+            Node n;
+            const string s = "test";
+            n.assign(s, 0.0);
+            Assert::IsTrue(s == n.toString());
+            //Assert::IsTrue(len == 0.0);
+        }
       TEST_METHOD(Attach) {
          Node n[Node::MAX_ATTACHED_POINTS+1];
          
@@ -153,7 +157,7 @@ public:
          }
 
       }
-	};
+    };
    #endif
 }
 

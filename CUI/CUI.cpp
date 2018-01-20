@@ -1,13 +1,17 @@
+/*
+* This is an independent project of an individual developer. Dear PVS-Studio, please check it.
+* PVS-Studio Static Code Analyzer for C, C++ and C#: http://www.viva64.com
+*/
 #include "stdafx.h"
-#include"../Core/global.h"
+#include "../../../lib/!lip_def.h"
+using namespace lip;
 #include"../Core/NodeList.h"
 #include"../Core/GameTime.h"
+#include"../Core/Game.h"
 //#include"../Core/RS_Part.h"
 
-#include"../Core/Game.h"
 
 using namespace Railway;
-//using namespace std::chrono;
 using std::cout;
 using std::string;
 
@@ -16,9 +20,9 @@ int main() {
    setlocale(LC_ALL, "");
 
    #if 0
-	Node n1;
-	n1.assign("Санк Петербург", 0.0);
-	cout << n1.toString() << "\n";
+    Node n1;
+    n1.assign("Санк Петербург", 0.0);
+    cout << n1.toString() << "\n";
 
    Node n[Node::MAX_ATTACHED_POINTS];
 
@@ -50,6 +54,7 @@ int main() {
 
 
    GameTime t, tEH, tAllegro, tE, tFr;
+   GameTime train_shedule_list[5];
 
 
    #if 0
@@ -60,8 +65,7 @@ int main() {
    Train hiSpeed(140.6);
    #endif
 
-   for (const auto& sp : game.sp()) {
-
+   for (const auto& sp : game.stop_points()) {
       tFr.fromHour(sp.distance / 52 + 2 + 43 / 60.0);
       t.fromHour(sp.distance / 77 + 7+17/60.0);
       tEH.fromHour(sp.distance / 75.1 + 20 + 50 / 60.0);
@@ -83,6 +87,7 @@ int main() {
    #endif
    //cout << "\n" << l1.toString();
    
-	cout << "\n\t\t PRESS ENTER...\n>"; getchar();//	return 0;
+    cout << "\n\t\t PRESS ENTER...\n>"; getchar();
+    return 0;
 }
 

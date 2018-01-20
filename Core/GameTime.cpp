@@ -1,10 +1,16 @@
+/*
+* This is an independent project of an individual developer. Dear PVS-Studio, please check it.
+* PVS-Studio Static Code Analyzer for C, C++ and C#: http://www.viva64.com
+*/
 #include "stdafx.h"
-#include "global.h"
+#include "../../../lib/!lip_def.h"
+using namespace lip;
+
 #include "GameTime.h"
 namespace Railway
 {
 
-   std::string GameTime::toString(const int formatId) const {
+   std::string GameTime::toString(int formatId) const {
       int s;
       if (formatId == 1) {
          s = (t + 500) / 1000;  //round
@@ -33,16 +39,16 @@ namespace Railway
       return str;
    }
 
-   void GameTime::fromHour(const double h) {
+   void GameTime::fromHour(double h) {
       t = fromHourToMsec(h);
    }
 
-   void GameTime::fromMsec(const uint ms) {
+   void GameTime::fromMsec(uint ms) {
       t = ms;
    }
 
-   int GameTime::fromHourToMsec(const double h) {
-      return (int(h * 60 * 60 * 1000));
+   int GameTime::fromHourToMsec(double h) {
+      return (int(h * 60.0 * 60 * 1000));
    }
 
 }
